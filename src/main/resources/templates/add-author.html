@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Trips</title>
+        <meta charset="UTF-8">
+        <title>Trips</title>
+
+</head>
+<body>
+<div layout:fragment="continut" class="container">
+
+<form class="form" th:action="@{/authors/add}" th:object="${author}" method="post">
+    <div class="form-group">
+        <label class="control-label" for="name">Nume</label>
+
+        <input class="form-control" id="name" type="text" th:field="*{name}"/>
+
+    <div class="form-group">
+        <label class="control-label" for="email">E-mail</label>
+
+        <input class="form-control" id="email" type="text" th:field="*{email}"/>
+
+    <div class="form-group">
+        <label class="control-label" for="birthDate">Zi nastere</label>
+
+        <input class="form-control" id="birthDate" type="date" th:field="*{birthDate}"/>
+
+    <div><button type="submit" class="btn btn-danger">Submit</button></div>
+    </div>
+    </div>  </div>
+</form>
+</div>
+</body>
+</html>

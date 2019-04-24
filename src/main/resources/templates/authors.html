@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/main}">
+<head>
+    <meta charset="UTF-8">
+    <title>Trips</title>
+    </head>
+<body>
+<div layout:fragment="continut" th:if="${!authors.empty}">
+
+<h2>Authors in database ok</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Nume</th>
+        <th>Email</th>
+        <th>Data nasterii</th>
+    </tr>
+    <tr th:each="author: ${authors}">
+        <td th:text="${author.name}"></td>
+        <td th:text="${author.email}"></td>
+        <td th:text="${author.birthDate}"></td>
+    </tr>
+
+</table>
+<input type="button" class="btn btn-danger" onclick="window.location='/authors/add';" value="Add new author"/>
+</div>
+</body>
+</html>
